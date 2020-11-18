@@ -1,0 +1,23 @@
+.tooltip {                                                        /* NEW */
+    background: #eee;                                               /* NEW */
+    box-shadow: 0 0 5px #999999;                                    /* NEW */
+    color: #333;                                                    /* NEW */
+    font-size: 10px;                                                /* NEW */
+    padding: 10px;                                                  /* NEW */
+    text-align: center;                                             /* NEW */
+    width: 150px;                                                    /* NEW */
+}
+
+.label {
+    font-size: 14px;
+}
+
+.percent {
+    color: red;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.legend {
+    font-size: 20px;
+}
