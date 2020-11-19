@@ -48,8 +48,7 @@ function init() {
         tooltip.append('div')
             .attr('class', 'total');
 
-        var url = "http://enjalot.github.io/wwsd/data/world/world-110m.geojson";
-        d3.json(url).then(function (json) {
+        d3.json('../world-110m.geojson').then(function (json) {
             for (var i = 0; i < countryCount.length; i++) {
                 var dataCountry = countryCount[i].country;
                 var dataValue = countryCount[i].value;
