@@ -12,17 +12,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- !Bootstrap-->
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="../JavaScript/page2.js"></script>
-    <link href="../CSS/page1.css" rel="stylesheet">
+    <link href="../CSS/page2.css" rel="stylesheet">
 
     <title>Beach Cleanup Data Visualisation</title>
 
@@ -55,42 +58,33 @@
     <a class="nav-link" href="Page4.html">Bar Chart</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Disclaimer</a>
+    <a class="nav-link" href="disclaimer.html">Disclaimer</a>
   </li>
 </ul>
 
 <div class="container my-4">
-  <div class="row">
-    <div class="col d-flex align-items-center justify-content-center">
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Countries:
-        </button>
-        <form class="dropdown-menu p-4" id="filterForm">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="All Countries" id="All_Countries">
-            <label class="form-check-label" for="All_Countries">
-              All Countries
-            </label>
-          </div>
-
-          <hr/>
-          <div id="wrapper"></div>
-          <hr/>
-
-          <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-      </div>
-    </div>
-  </div>
   <div class="row mt-4">
     <div class="col d-flex align-items-center justify-content-center">
       <h3>Choropleth Map of Total Beach Clean-ups in Countries</h3>
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col d-flex align-items-center justify-content-center">
+    <div class="col-8 d-flex align-items-center justify-content-center">
       <div id="chart"></div>
+    </div>
+    <div class="col-1 d-flex align-items-center justify-content-center">
+    </div>
+    <div class="col-3 d-flex align-items-center justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Description</h5>
+          <p class="card-text">
+            The choropleth map allows reader to hover over each country to view the country's total clean-ups hosted.
+            From the map, it can be concluded that the USA has dominated other countries in term of total clean-ups
+            hosted.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -50,7 +50,7 @@ function barChartSelectedAverage(countryCount, selected) {
     const xScale = d3.scaleBand()
         .domain(d3.range(topTenCount.length))
         .rangeRound([yPadding, w - yPadding])
-        .paddingInner(0.05);
+        .paddingInner(0.02);
 
     const yScale = d3.scaleLinear()
         .domain([0, d3.max(allValues, function (d) {
@@ -72,6 +72,21 @@ function barChartSelectedAverage(countryCount, selected) {
         .attr("width", w)
         .attr("height", h);
 
+    const tooltip = d3.select('#chart')
+        .append('div')
+        .style("opacity", 0)
+        .attr('class', 'tooltip')
+        .attr("id", "svgTooltip");
+
+    tooltip.append('div')
+        .attr('class', 'average');
+
+    tooltip.append('div')
+        .attr('class', 'totalWeight');
+
+    tooltip.append('div')
+        .attr('class', 'totalCleanup');
+
     const rect = svg.selectAll("rect")
         .data(topTenCount)
         .enter()
@@ -86,7 +101,34 @@ function barChartSelectedAverage(countryCount, selected) {
         .attr("height", function (d, i) {
             return h - xPadding - yScale(0);
         })
-        .attr("fill", "#e15759");
+        .attr("fill", "#e15759")
+        .on('mouseover', function (d) {
+            tooltip.transition().duration(100).style("opacity", 1);
+            if (selected === 'averageWeight') {
+                tooltip.select('.average').html('Average: ' + Math.round(d.averageWeight) + ' kg');
+                tooltip.select('.totalWeight').html(Math.round(d.weight) + ' kg' + ' in');
+            } else if (selected === 'averageDistance') {
+                tooltip.select('.average').html('Average: ' + Math.round(d.averageDistance) + ' km');
+                tooltip.select('.totalWeight').html(Math.round(d.distance) + ' km' + ' in');
+            } else if (selected === 'averageNumberOfParticipants') {
+                tooltip.select('.average').html('Average: ' + Math.round(d.averageNumberOfParticipants) + ' peoples');
+                tooltip.select('.totalWeight').html(Math.round(d.people) + ' peoples' + ' in');
+            }
+            tooltip.select('.totalCleanup').html(d.totalCleanup + ' clean-ups');
+
+            d3.select(this).transition().duration(100)
+                .attr("fill", "#4e79a7");
+        })
+        .on('mousemove', function (d) {
+            tooltip
+                .style("left", (d3.mouse(this)[0] - 155) + "px")
+                .style("top", (d3.mouse(this)[1] - 100) + "px");
+        })
+        .on('mouseout', function () {
+            tooltip.transition().duration(100).style("opacity", 0);
+            d3.select(this).transition().duration(100)
+                .attr("fill", "#e15759");
+        });
 
     svg.selectAll("rect")
         .transition()

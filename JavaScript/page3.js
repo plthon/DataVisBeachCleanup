@@ -74,19 +74,6 @@ function lineChartSelectedCountries(selectedMonthCount) {
         .attr("width", w)
         .attr("height", h);
 
-    /*var g = svg.append("g")
-        .attr("transform",
-            "translate(" + axisPadding + "," + axisPadding + ")");
-
-    var svg_aline = g.append("line")
-        .attr("class", "line")
-        .style("stroke-dasharray", ("3, 10"))
-        .attr("x1",100)
-        .attr("x2",400)
-        .attr("y1",200)
-        .attr("y2",200)
-        .style("display", "None")*/
-
     svg.append("g")
         .attr("class", "xAxis")
         .attr("transform", "translate(" + (0) + ", " + (h - axisPadding) + ")")
@@ -207,17 +194,11 @@ function lineChartSelectedCountries(selectedMonthCount) {
                 .style("stroke", myColor(d.country))
                 .style("stroke-width", "5")
                 .attr("r", 7);
-            /*svg_aline.transition().duration(10)
-                .style("display", "block")
-                .attr("x1", xScale(i))
-                .attr("y1", yScale(d.value))
-                .attr("x2", xScale(i))
-                .attr("y2", h)*/
         })
         .on("mousemove", function (d) {
             tooltip
                 .html("Total Clean-ups: " + d.value)
-                .style("left", (d3.mouse(this)[0] + 50) + "px")
+                .style("left", (d3.mouse(this)[0] - 140) + "px")
                 .style("top", (d3.mouse(this)[1] - 50) + "px");
         })
         .on("mouseout", function (d) {
@@ -235,26 +216,6 @@ function lineChartSelectedCountries(selectedMonthCount) {
             return i * (5000 / 11);
         })
         .style("opacity", 1);
-
-    /*svg.selectAll("myLabels")
-        .data(selectedMonthCount)
-        .enter()
-        .append('g')
-        .append("text")
-        .datum(function (d) {
-            return {name: d.country, value: d.value[d.value.length - 1]};
-        }) // keep only the last value of each time series
-        .attr("transform", function (d, i) {
-            return "translate(" + xScale(i) + "," + yScale(d.value.value) + ")";
-        }) // Put the text at the position of the last point
-        .attr("x", 12) // shift the text a bit more right
-        .text(function (d) {
-            return d.name;
-        })
-        .style("fill", function (d) {
-            return myColor(d.country)
-        })
-        .style("font-size", 15)*/
 
 }
 

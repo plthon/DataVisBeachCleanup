@@ -1,3 +1,15 @@
+body {
+    background-color: #343A40;
+}
+
+h3 {
+    color: white;
+}
+
+text {
+    color: white;
+}
+
 .tooltip {                                                        /* NEW */
     background: #eee;                                               /* NEW */
     box-shadow: 0 0 5px #999999;                                    /* NEW */
@@ -8,15 +20,12 @@
     width: 170px;                                                    /* NEW */
 }
 
-.totalWeight {
+.label {
+    color: black;
     font-size: 12px;
 }
 
-.totalCleanup{
+.total{
+    color: black;
     font-size: 12px;
-}
-
-.average{
-    color: red;
-    font-size: 14px;
 }

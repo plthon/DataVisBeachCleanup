@@ -117,17 +117,16 @@ function donutChart(debrisCount, countryName) {
             tooltip.select('.percent').html(percent + '%');
 
             d3.select(this).transition().duration(100)
-                .style("stroke", "white")
-                .style("stroke-width", "5")
+                .attr('opacity', '.85')
         })
         .on('mousemove', function (d) {
-            tooltip.style("left", 495 + "px")
+            tooltip.style("left", 305 + "px")
                 .style("top", 260 + "px");
         })
         .on('mouseout', function () {
             tooltip.transition().duration(100).style("opacity", 0);
             d3.select(this).transition().duration(100)
-                .style("stroke-width", "0")
+                .attr('opacity', '1')
         })
         .transition()
         .delay(function (d, i) {
