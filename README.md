@@ -3,8 +3,6 @@ The dataset of this visualisation project was obtained from [Coastal Cleanup Dat
 
 The data were collected from 2019 Oct 1 to 2020 September 30.
 
-The website is not mobile browser friendly.
-
 
 Author: Thon Pun Liang
 
