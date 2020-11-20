@@ -1,5 +1,5 @@
 function init() {
-    d3.csv("../DetailedSummary-Earth_Modified.csv").then(function (data) {
+    d3.csv("../Assets/DetailedSummary-Earth_Modified.csv").then(function (data) {
         dataset = data;
         let monthCount = prepareData();
         let dataset2 = [];

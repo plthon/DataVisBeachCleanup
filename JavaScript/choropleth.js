@@ -1,6 +1,6 @@
 function init() {
 
-    d3.csv("../DetailedSummary-Earth_Modified.csv").then(function (data) {
+    d3.csv("../Assets/DetailedSummary-Earth_Modified.csv").then(function (data) {
         dataset = data;
         let debrisCount = prepareData();
         choropleth(debrisCount);
@@ -48,7 +48,7 @@ function init() {
         tooltip.append('div')
             .attr('class', 'total');
 
-        d3.json('../world-110m.geojson').then(function (json) {
+        d3.json('../Assets/world-110m.geojson').then(function (json) {
             for (var i = 0; i < countryCount.length; i++) {
                 var dataCountry = countryCount[i].country;
                 var dataValue = countryCount[i].value;
