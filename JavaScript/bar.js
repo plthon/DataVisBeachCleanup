@@ -237,11 +237,11 @@ function updateChart() {
         svgObj.remove();
     }
     if (x === 'averageWeight') {
-        heading.innerHTML = 'Bar chart of Top 10 Countries in Average Weight of Debris Collected';
+        heading.innerHTML = 'Bar chart of Top 10 Countries in Average Weight of Debris Collected per Clean-up';
     } else if (x === 'averageDistance') {
-        heading.innerText = 'Bar chart of Top 10 Countries in Average Distance of Debris Collected';
+        heading.innerText = 'Bar chart of Top 10 Countries in Average Distance Covered per Clean-up';
     } else if (x === 'averageNumberOfParticipants') {
-        heading.innerText = 'Bar chart of Top 10 Countries in Average Number of Participants of Debris Collected';
+        heading.innerText = 'Bar chart of Top 10 Countries in Average Number of Participants per Clean-up';
     }
     barChartSelectedAverage(countryCount, x);
 }
